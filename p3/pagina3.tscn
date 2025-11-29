@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0kyfo1avbn4v"]
+
+[ext_resource type="Texture2D" uid="uid://b3ua2kfacgnee" path="res://p3/P3.png" id="1_rxwdp"]
+[ext_resource type="Script" uid="uid://lxcapywhsy1y" path="res://p3/pagina_3.gd" id="2_4r25p"]
+[ext_resource type="Texture2D" uid="uid://bqutqkdfte6s2" path="res://assets/ArrowCircleRightOrange.png" id="2_gu768"]
+[ext_resource type="Texture2D" uid="uid://b5epuaimc8cqk" path="res://assets/ArrowCircleLeft.png" id="3_4r25p"]
+[ext_resource type="VideoStream" uid="uid://cai52r585qtmj" path="res://p3/videoplayback.ogv" id="5_4r25p"]
+[ext_resource type="Texture2D" uid="uid://bhffs3w8nboha" path="res://p3/tvdesligada.png" id="6_dxfhv"]
+[ext_resource type="Texture2D" uid="uid://cax8t0uwrs4xl" path="res://p3/controle.png" id="7_nj6cn"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rxwdp")
+script = ExtResource("2_4r25p")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(624, 880)
+texture_normal = ExtResource("2_gu768")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(60, 880)
+texture_normal = ExtResource("3_4r25p")
+
+[node name="propaganda" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 426.0
+offset_right = 596.0
+offset_bottom = 786.0
+scale = Vector2(0.54, 0.54)
+stream = ExtResource("5_4r25p")
+
+[node name="tv" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 323.0
+offset_right = 574.0
+offset_bottom = 823.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_dxfhv")
+
+[node name="controle" type="TouchScreenButton" parent="."]
+position = Vector2(486.99997, 659)
+rotation = -1.2217305
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_nj6cn")
+
+[connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="finished" from="propaganda" to="." method="_on_propaganda_finished"]
+[connection signal="pressed" from="controle" to="." method="_on_controle_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1k6a6yllpuaw"]
+
+[ext_resource type="Texture2D" uid="uid://d1sn31ed45eq4" path="res://capa/Capa.png" id="1_qtp42"]
+[ext_resource type="Script" uid="uid://bts4nkbxqsrem" path="res://capa/capa.gd" id="2_1f56y"]
+[ext_resource type="Texture2D" uid="uid://chycfdtflgb83" path="res://assets/ArrowCircleRight.png" id="3_r04f5"]
+[ext_resource type="Texture2D" uid="uid://civl7jvvuo3cm" path="res://assets/SpeakerSimpleX(1).png" id="4_r04f5"]
+[ext_resource type="AudioStream" uid="uid://shjp4pxo1fug" path="res://vozes/capa.ogg" id="6_6f1ph"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qtp42")
+script = ExtResource("2_1f56y")
+
+[node name="Começar" type="TouchScreenButton" parent="."]
+position = Vector2(623, 884)
+texture_normal = ExtResource("3_r04f5")
+
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(344, 59)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_r04f5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("6_6f1ph")
+
+[connection signal="pressed" from="Começar" to="." method="_on_começar_pressed"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
