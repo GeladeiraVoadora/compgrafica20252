@@ -1,9 +1,181 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpa0i13r3p7u2"]
+[gd_scene load_steps=23 format=3 uid="uid://bpa0i13r3p7u2"]
 
 [ext_resource type="Texture2D" uid="uid://cdtl8pyodc1a4" path="res://p2/P2.png" id="1_2a0te"]
 [ext_resource type="Script" uid="uid://qpwu3rvnutrd" path="res://p2/pagina_2.gd" id="2_24tub"]
 [ext_resource type="Texture2D" uid="uid://b5epuaimc8cqk" path="res://assets/ArrowCircleLeft.png" id="3_ugi84"]
 [ext_resource type="Texture2D" uid="uid://bqutqkdfte6s2" path="res://assets/ArrowCircleRightOrange.png" id="4_0h83j"]
+[ext_resource type="Texture2D" uid="uid://mi4jnw02aotq" path="res://p2/telefoneLIgado.png" id="5_0h83j"]
+[ext_resource type="Texture2D" uid="uid://3ge10uss65ew" path="res://p2/semtitulo.png" id="6_1pnqs"]
+[ext_resource type="Texture2D" uid="uid://c2l2hicn3vljm" path="res://p2/cartaamigofechada.png" id="7_ng52a"]
+[ext_resource type="Texture2D" uid="uid://dxokdsvrawgna" path="res://p2/carta.png" id="7_vnmhc"]
+[ext_resource type="Texture2D" uid="uid://ceehfg8yqu13v" path="res://p2/cartafechada.png" id="8_vnmhc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_du2o3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnmhc"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(395, 0, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du2o3"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(790, 0, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8geqa"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(0, 395, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thbye"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(395, 395, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gko47"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(790, 395, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdljm"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(0, 790, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3nwi"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(395, 790, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h37k4"]
+atlas = ExtResource("6_1pnqs")
+region = Rect2(790, 790, 395, 395)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gk5ca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0h83j")
+}],
+"loop": true,
+"name": &"atendido",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnmhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du2o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8geqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thbye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gko47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdljm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3nwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h37k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3nwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdljm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gko47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thbye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8geqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du2o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnmhc")
+}],
+"loop": true,
+"name": &"telefone",
+"speed": 18.0
+}]
+
+[sub_resource type="Animation" id="Animation_8geqa"]
+resource_name = "carta"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6333333, 0.93333334, 1.2, 1.5, 1.8, 2.1, 2.3666666, 2.67, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(104, 556), Vector2(336, 699), Vector2(372, 297), Vector2(78, 329), Vector2(218.99998, -40), Vector2(-252, -253), Vector2(218.99998, -40), Vector2(442, 216), Vector2(47, 260), Vector2(520, 537), Vector2(104, 556)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carta:texture_normal")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_vnmhc"), ExtResource("7_ng52a")]
+}
+
+[sub_resource type="Animation" id="Animation_thbye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(104, 556)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carta:texture_normal")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_vnmhc")]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Telefone/Telefone")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gko47"]
+_data = {
+&"RESET": SubResource("Animation_thbye"),
+&"carta": SubResource("Animation_8geqa")
+}
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
@@ -11,13 +183,36 @@ offset_bottom = 40.0
 texture = ExtResource("1_2a0te")
 script = ExtResource("2_24tub")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="voltar" type="TouchScreenButton" parent="."]
 position = Vector2(60, 880)
 texture_normal = ExtResource("3_ugi84")
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="seguir" type="TouchScreenButton" parent="."]
 position = Vector2(624, 880)
 texture_normal = ExtResource("4_0h83j")
 
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
-[connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
+[node name="Telefone" type="TouchScreenButton" parent="."]
+position = Vector2(549, 689)
+scale = Vector2(11, 11)
+shape = SubResource("CircleShape2D_du2o3")
+
+[node name="Telefone" type="AnimatedSprite2D" parent="Telefone"]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_gk5ca")
+animation = &"atendido"
+frame_progress = 0.27028045
+
+[node name="Carta" type="TouchScreenButton" parent="."]
+position = Vector2(104, 556)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_vnmhc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gko47")
+}
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
+[connection signal="pressed" from="Telefone" to="." method="_on_telefone_pressed"]
+[connection signal="pressed" from="Carta" to="." method="_on_carta_pressed"]
