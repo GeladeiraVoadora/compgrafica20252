@@ -10,8 +10,8 @@ offset_bottom = 40.0
 texture = ExtResource("1_7sq4d")
 script = ExtResource("2_5jbhd")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="reiniciar" type="TouchScreenButton" parent="."]
 position = Vector2(620, 875)
 texture_normal = ExtResource("3_14re7")
 
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]

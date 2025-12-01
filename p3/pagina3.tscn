@@ -14,11 +14,11 @@ offset_bottom = 40.0
 texture = ExtResource("1_rxwdp")
 script = ExtResource("2_4r25p")
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="seguir" type="TouchScreenButton" parent="."]
 position = Vector2(624, 880)
 texture_normal = ExtResource("2_gu768")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="voltar" type="TouchScreenButton" parent="."]
 position = Vector2(60, 880)
 texture_normal = ExtResource("3_4r25p")
 
@@ -46,7 +46,7 @@ rotation = -1.2217305
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("7_nj6cn")
 
-[connection signal="pressed" from="TouchScreenButton2" to="." method="_on_touch_screen_button_2_pressed"]
-[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="finished" from="propaganda" to="." method="_on_propaganda_finished"]
 [connection signal="pressed" from="controle" to="." method="_on_controle_pressed"]
