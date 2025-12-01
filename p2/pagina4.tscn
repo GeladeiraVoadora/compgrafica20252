@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cirr0xm7gsdcm"]
+[gd_scene load_steps=15 format=3 uid="uid://dujbp51fq6uhx"]
 
 [ext_resource type="Texture2D" uid="uid://1lcyhbnwdmkn" path="res://p4/P4.png" id="1_4lxcm"]
 [ext_resource type="Script" uid="uid://rlmx3dj6mkok" path="res://p4/pagina_4.gd" id="2_jjp51"]
 [ext_resource type="Texture2D" uid="uid://bqutqkdfte6s2" path="res://assets/ArrowCircleRightOrange.png" id="3_vfpsv"]
 [ext_resource type="Texture2D" uid="uid://b5epuaimc8cqk" path="res://assets/ArrowCircleLeft.png" id="4_4dn68"]
+[ext_resource type="Script" uid="uid://bcrosc61k0w0k" path="res://p5/label.gd" id="5_5et2k"]
 [ext_resource type="Script" uid="uid://blrbls0eouht7" path="res://p4/termometro.gd" id="5_bqmyc"]
 [ext_resource type="Texture2D" uid="uid://bfm0ily5ad6t8" path="res://p5/Termometro.png" id="5_gaf85"]
 [ext_resource type="Texture2D" uid="uid://ci0h4fmc4reah" path="res://p5/gelo.png" id="6_5et2k"]
@@ -11,18 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://gpyc23xnb7sl" path="res://p5/Radio.png" id="8_coxbx"]
 [ext_resource type="Texture2D" uid="uid://4kxb4di5niip" path="res://p5/botaoRadio.png" id="9_6tpcv"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v4unl"]
+radius = 24.48877
+height = 145.66391
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_arxru"]
 radius = 51.41984
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_npyi1"]
 radius = 51.0392
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v4unl"]
-radius = 24.48877
-height = 145.66391
-
 [node name="TextureRect" type="TextureRect"]
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -728.0
@@ -37,6 +38,34 @@ texture_normal = ExtResource("3_vfpsv")
 [node name="voltar" type="TouchScreenButton" parent="."]
 position = Vector2(60, 880)
 texture_normal = ExtResource("4_4dn68")
+
+[node name="termometro" type="Area2D" parent="."]
+position = Vector2(394, 483)
+script = ExtResource("5_bqmyc")
+
+[node name="Label" type="Label" parent="termometro"]
+anchors_preset = -1
+anchor_left = 0.41400003
+anchor_top = 0.60400003
+anchor_right = 0.596
+anchor_bottom = 0.62600005
+offset_left = -76.00003
+offset_top = 135.0
+offset_right = 63.99997
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Temperatura: 0º C"
+script = ExtResource("5_5et2k")
+
+[node name="forma" type="CollisionShape2D" parent="termometro"]
+rotation = 0.7853982
+shape = SubResource("CapsuleShape2D_v4unl")
+
+[node name="termometro" type="Sprite2D" parent="termometro/forma"]
+position = Vector2(7.6293945e-06, 1.4142151)
+rotation = -0.7853982
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_gaf85")
 
 [node name="gelo" type="Area2D" parent="."]
 position = Vector2(635, 530)
@@ -59,34 +88,6 @@ shape = SubResource("CircleShape2D_npyi1")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_bqmyc")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.41400003
-anchor_top = 0.60400003
-anchor_right = 0.596
-anchor_bottom = 0.62600005
-offset_left = 0.047943115
-offset_top = -0.4960327
-offset_right = 140.04797
-offset_bottom = 22.503967
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Temperatura: 0º C"
-
-[node name="termometro" type="Area2D" parent="Label"]
-position = Vector2(76.00003, -135)
-script = ExtResource("5_bqmyc")
-
-[node name="forma" type="CollisionShape2D" parent="Label/termometro"]
-rotation = 0.7853982
-shape = SubResource("CapsuleShape2D_v4unl")
-
-[node name="termometro" type="Sprite2D" parent="Label/termometro/forma"]
-position = Vector2(7.6293945e-06, 1.4142151)
-rotation = -0.7853982
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_gaf85")
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 225.0
@@ -103,4 +104,3 @@ texture_normal = ExtResource("9_6tpcv")
 
 [connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
-[connection signal="input_event" from="Label/termometro" to="Label/termometro" method="_on_input_event"]
