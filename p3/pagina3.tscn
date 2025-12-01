@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0kyfo1avbn4v"]
+[gd_scene load_steps=10 format=3 uid="uid://b0kyfo1avbn4v"]
 
 [ext_resource type="Texture2D" uid="uid://b3ua2kfacgnee" path="res://p3/P3.png" id="1_rxwdp"]
 [ext_resource type="Script" uid="uid://lxcapywhsy1y" path="res://p3/pagina_3.gd" id="2_4r25p"]
@@ -7,6 +7,8 @@
 [ext_resource type="VideoStream" uid="uid://cai52r585qtmj" path="res://p3/videoplayback.ogv" id="5_4r25p"]
 [ext_resource type="Texture2D" uid="uid://bhffs3w8nboha" path="res://p3/tvdesligada.png" id="6_dxfhv"]
 [ext_resource type="Texture2D" uid="uid://cax8t0uwrs4xl" path="res://p3/controle.png" id="7_nj6cn"]
+[ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="8_2cwdp"]
+[ext_resource type="AudioStream" uid="uid://cav5lupvrsgvu" path="res://vozes/pagina3.ogg" id="9_2cwdp"]
 
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
@@ -46,7 +48,16 @@ rotation = -1.2217305
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("7_nj6cn")
 
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(352, 58)
+texture_normal = ExtResource("8_2cwdp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("9_2cwdp")
+
 [connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="finished" from="propaganda" to="." method="_on_propaganda_finished"]
 [connection signal="pressed" from="controle" to="." method="_on_controle_pressed"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

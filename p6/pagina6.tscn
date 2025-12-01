@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmn12fok1wqtm"]
+[gd_scene load_steps=15 format=3 uid="uid://cmn12fok1wqtm"]
 
 [ext_resource type="Texture2D" uid="uid://4a6iwgr6yvow" path="res://p6/P6.png" id="1_us4aw"]
 [ext_resource type="Script" uid="uid://jso5l52chloq" path="res://p6/pagina_6.gd" id="2_h56mm"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://chwfy07luld5d" path="res://p6/triste.png" id="7_8dome"]
 [ext_resource type="Texture2D" uid="uid://dv4k2mebd3mvl" path="res://p6/RedesSociais.png" id="8_rct3m"]
 [ext_resource type="Texture2D" uid="uid://b6lknp7l6jf5g" path="res://p6/Responsabilidades.png" id="9_1fq0n"]
+[ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="11_rct3m"]
+[ext_resource type="AudioStream" uid="uid://dr5ah5gv7l2xr" path="res://vozes/pagina6.ogg" id="12_rct3m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ur6oi"]
 animations = [{
@@ -89,9 +91,18 @@ scale_amount_max = 6.0
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(352, 58)
+texture_normal = ExtResource("11_rct3m")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("12_rct3m")
+
 [connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Node2D/redes" to="Node2D" method="_on_redes_pressed"]
 [connection signal="released" from="Node2D/redes" to="Node2D" method="_on_redes_released"]
 [connection signal="pressed" from="Node2D/responsabilidades" to="Node2D" method="_on_responsabilidades_pressed"]
 [connection signal="released" from="Node2D/responsabilidades" to="Node2D" method="_on_responsabilidades_released"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

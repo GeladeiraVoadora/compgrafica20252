@@ -1,4 +1,4 @@
-[gd_scene load_steps=446 format=3 uid="uid://bo53wkf0imihn"]
+[gd_scene load_steps=448 format=3 uid="uid://bo53wkf0imihn"]
 
 [ext_resource type="Texture2D" uid="uid://igf1ygfyy71c" path="res://p1/P1.png" id="1_x11sf"]
 [ext_resource type="Script" uid="uid://dphriqnl7sb0b" path="res://p1/pagina_1.gd" id="2_5edy7"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://dqdchuem3lgeh" path="res://p1/sprites/1-removebg-preview.png" id="9_xsmx4"]
 [ext_resource type="Texture2D" uid="uid://cmq01raxxhqde" path="res://p1/mulhertelegrafo.png" id="10_2hc7m"]
 [ext_resource type="Texture2D" uid="uid://dmuqebxxq4vfo" path="res://p1/meninotv.png" id="11_uaoee"]
+[ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="17_mx50q"]
+[ext_resource type="AudioStream" uid="uid://m5jxlopmwm4m" path="res://vozes/Pagina1.ogg" id="18_mx50q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wsrmu"]
 atlas = ExtResource("10_2hc7m")
@@ -3166,6 +3168,15 @@ sprite_frames = SubResource("SpriteFrames_chrk7")
 animation = &"futuro"
 frame_progress = 0.85108334
 
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(352, 58)
+texture_normal = ExtResource("17_mx50q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("18_mx50q")
+
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Seguir" to="." method="_on_seguir_pressed"]
 [connection signal="input_event" from="maquinaTempo" to="maquinaTempo" method="_on_input_event"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

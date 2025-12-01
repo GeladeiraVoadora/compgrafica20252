@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dvprx3kks4m2x"]
+[gd_scene load_steps=54 format=3 uid="uid://dvprx3kks4m2x"]
 
 [ext_resource type="Texture2D" uid="uid://cgr250nch7gqe" path="res://p5/P5.png" id="1_03le2"]
 [ext_resource type="Script" uid="uid://3u1xdh7q0cdh" path="res://p5/pagina_5.gd" id="2_c3hcs"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b8dqwbx2brfct" path="res://p4/PARADO.png" id="6_moenx"]
 [ext_resource type="Texture2D" uid="uid://kbdq0a8fihge" path="res://p4/publicarDesligado.png" id="8_7cgej"]
 [ext_resource type="Texture2D" uid="uid://5iydod8pchuy" path="res://p4/comentarios.png" id="9_7cgej"]
+[ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="10_10h5a"]
+[ext_resource type="AudioStream" uid="uid://bb32t4ol2fgff" path="res://vozes/pagina5.ogg" id="11_10h5a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hby7r"]
 font_size = 100
@@ -365,6 +367,15 @@ offset_right = 597.0
 offset_bottom = 28.0
 texture = ExtResource("9_7cgej")
 
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(352, 58)
+texture_normal = ExtResource("10_10h5a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("11_10h5a")
+
 [connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Node2D/Label/publicar" to="Node2D/Label" method="_on_publicar_pressed"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

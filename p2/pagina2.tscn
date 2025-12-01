@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bpa0i13r3p7u2"]
+[gd_scene load_steps=25 format=3 uid="uid://bpa0i13r3p7u2"]
 
 [ext_resource type="Texture2D" uid="uid://cdtl8pyodc1a4" path="res://p2/P2.png" id="1_2a0te"]
 [ext_resource type="Script" uid="uid://qpwu3rvnutrd" path="res://p2/pagina_2.gd" id="2_24tub"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c2l2hicn3vljm" path="res://p2/cartaamigofechada.png" id="7_ng52a"]
 [ext_resource type="Texture2D" uid="uid://dxokdsvrawgna" path="res://p2/carta.png" id="7_vnmhc"]
 [ext_resource type="Texture2D" uid="uid://ceehfg8yqu13v" path="res://p2/cartafechada.png" id="8_vnmhc"]
+[ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="10_8geqa"]
+[ext_resource type="AudioStream" uid="uid://b3c4fwa0g7e4" path="res://vozes/pagina2.ogg" id="11_8geqa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_du2o3"]
 
@@ -105,34 +107,6 @@ animations = [{
 "speed": 18.0
 }]
 
-[sub_resource type="Animation" id="Animation_8geqa"]
-resource_name = "carta"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Carta:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.6333333, 0.93333334, 1.2, 1.5, 1.8, 2.1, 2.3666666, 2.67, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(104, 556), Vector2(336, 699), Vector2(372, 297), Vector2(78, 329), Vector2(218.99998, -40), Vector2(-252, -253), Vector2(218.99998, -40), Vector2(442, 216), Vector2(47, 260), Vector2(520, 537), Vector2(104, 556)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carta:texture_normal")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("8_vnmhc"), ExtResource("7_ng52a")]
-}
-
 [sub_resource type="Animation" id="Animation_thbye"]
 length = 0.001
 tracks/0/type = "value"
@@ -169,6 +143,34 @@ tracks/2/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "values": []
+}
+
+[sub_resource type="Animation" id="Animation_8geqa"]
+resource_name = "carta"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Carta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.6333333, 0.93333334, 1.2, 1.5, 1.8, 2.1, 2.3666666, 2.67, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(104, 556), Vector2(336, 699), Vector2(372, 297), Vector2(78, 329), Vector2(218.99998, -40), Vector2(-252, -253), Vector2(218.99998, -40), Vector2(442, 216), Vector2(47, 260), Vector2(520, 537), Vector2(104, 556)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carta:texture_normal")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_vnmhc"), ExtResource("7_ng52a")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gko47"]
@@ -212,7 +214,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_gko47")
 }
 
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(352, 58)
+texture_normal = ExtResource("10_8geqa")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("11_8geqa")
+
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
 [connection signal="pressed" from="Telefone" to="." method="_on_telefone_pressed"]
 [connection signal="pressed" from="Carta" to="." method="_on_carta_pressed"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

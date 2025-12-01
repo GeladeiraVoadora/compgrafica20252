@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4eqdap32vgfc"]
+[gd_scene load_steps=6 format=3 uid="uid://b4eqdap32vgfc"]
 
 [ext_resource type="Texture2D" uid="uid://mn8rjle3ncdk" path="res://contracapa/Contra capa.png" id="1_7sq4d"]
 [ext_resource type="Script" uid="uid://cxu7wt0nf2lk6" path="res://contracapa/texture_rect.gd" id="2_5jbhd"]
 [ext_resource type="Texture2D" uid="uid://dyftaoaqimi70" path="res://assets/ArrowCounterClockwise.png" id="3_14re7"]
+[ext_resource type="Texture2D" uid="uid://civl7jvvuo3cm" path="res://assets/SpeakerSimpleX(1).png" id="4_14re7"]
+[ext_resource type="AudioStream" uid="uid://iv7ud0xtu2b" path="res://vozes/referencias.ogg" id="5_14re7"]
 
 [node name="Contracapa" type="TextureRect"]
 offset_right = 40.0
@@ -14,4 +16,14 @@ script = ExtResource("2_5jbhd")
 position = Vector2(620, 875)
 texture_normal = ExtResource("3_14re7")
 
+[node name="Speaker" type="TouchScreenButton" parent="."]
+position = Vector2(344, 59)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_14re7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
+stream = ExtResource("5_14re7")
+
 [connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
+[connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
