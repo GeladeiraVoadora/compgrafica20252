@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmn12fok1wqtm"]
+[gd_scene load_steps=13 format=3 uid="uid://cmn12fok1wqtm"]
 
 [ext_resource type="Texture2D" uid="uid://4a6iwgr6yvow" path="res://p6/P6.png" id="1_us4aw"]
 [ext_resource type="Script" uid="uid://jso5l52chloq" path="res://p6/pagina_6.gd" id="2_h56mm"]
 [ext_resource type="Texture2D" uid="uid://bqutqkdfte6s2" path="res://assets/ArrowCircleRightOrange.png" id="3_b7f40"]
 [ext_resource type="Texture2D" uid="uid://b5epuaimc8cqk" path="res://assets/ArrowCircleLeft.png" id="4_jmm5r"]
+[ext_resource type="Script" uid="uid://lg4mpq8ju3o2" path="res://p6/node_2d.gd" id="5_cvl7g"]
 [ext_resource type="Texture2D" uid="uid://bnbx3l6qs348u" path="res://p6/serio.png" id="5_pwnrc"]
 [ext_resource type="Texture2D" uid="uid://ck7cnaih15bdk" path="res://p6/sorriso.png" id="6_cvl7g"]
 [ext_resource type="Texture2D" uid="uid://chwfy07luld5d" path="res://p6/triste.png" id="7_8dome"]
@@ -37,6 +38,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvl7g"]
+
 [node name="TextureRect" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -52,8 +55,9 @@ position = Vector2(60, 880)
 texture_normal = ExtResource("4_jmm5r")
 
 [node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("5_cvl7g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+[node name="pessoa" type="AnimatedSprite2D" parent="Node2D"]
 position = Vector2(387, 788)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ur6oi")
@@ -67,5 +71,27 @@ texture_normal = ExtResource("8_rct3m")
 position = Vector2(523, 682)
 texture_normal = ExtResource("9_1fq0n")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D"]
+position = Vector2(388, 658)
+emitting = false
+amount = 80
+texture = SubResource("PlaceholderTexture2D_cvl7g")
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(1, 300)
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 250.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
 [connection signal="pressed" from="seguir" to="." method="_on_seguir_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Node2D/redes" to="Node2D" method="_on_redes_pressed"]
+[connection signal="released" from="Node2D/redes" to="Node2D" method="_on_redes_released"]
+[connection signal="pressed" from="Node2D/responsabilidades" to="Node2D" method="_on_responsabilidades_pressed"]
+[connection signal="released" from="Node2D/responsabilidades" to="Node2D" method="_on_responsabilidades_released"]
