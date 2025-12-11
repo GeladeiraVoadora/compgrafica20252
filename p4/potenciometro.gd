@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var balao_fala = get_node("../../BalaoFala") 
+@onready var balao_fala = $Node2D/BalaoFala
 
 var esta_arrastando = false
 var angulo_anterior = 0.0
@@ -33,6 +33,7 @@ func sucesso():
 	#print("DEU UMA VOLTA COMPLETA!")
 	
 	if balao_fala: 
+		balao_fala.play("notas")
 		balao_fala.visible = true
 
 func _on_area_toque_pressed():

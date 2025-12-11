@@ -30,7 +30,6 @@ func _ready() -> void:
 
 
 func _on_telefone_pressed() -> void:
-	telefone.scale = Vector2(0.045,0.045)
 	telefone.play("atendido")
 
 func _on_speaker_pressed() -> void:

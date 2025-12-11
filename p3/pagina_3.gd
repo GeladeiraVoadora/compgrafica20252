@@ -18,13 +18,17 @@ func _on_seguir_pressed() -> void:
 	
 
 func _on_controle_pressed() -> void:
-	if !playing:
+	if !playing and propaganda.paused == true:
+		playing = true
+		tv.texture = ligada
+		propaganda.paused = false
+	elif !playing:
 		playing = true
 		tv.texture = ligada
 		propaganda.play()
 	else:
 		tv.texture = desligada
-		propaganda.stop()
+		propaganda.paused = true
 		playing = false
 
 

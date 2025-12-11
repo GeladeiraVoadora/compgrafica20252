@@ -28,16 +28,16 @@ texture_normal = ExtResource("3_4r25p")
 layout_mode = 0
 offset_left = 116.0
 offset_top = 426.0
-offset_right = 596.0
+offset_right = 756.0
 offset_bottom = 786.0
 scale = Vector2(0.54, 0.54)
 stream = ExtResource("5_4r25p")
 
 [node name="tv" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 74.0
+offset_left = 63.0
 offset_top = 323.0
-offset_right = 574.0
+offset_right = 701.5714
 offset_bottom = 823.0
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_dxfhv")

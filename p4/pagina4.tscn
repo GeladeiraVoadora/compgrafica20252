@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cirr0xm7gsdcm"]
+[gd_scene load_steps=40 format=3 uid="uid://cirr0xm7gsdcm"]
 
 [ext_resource type="Texture2D" uid="uid://1lcyhbnwdmkn" path="res://p4/P4.png" id="1_4lxcm"]
 [ext_resource type="Script" uid="uid://rlmx3dj6mkok" path="res://p4/pagina_4.gd" id="2_jjp51"]
@@ -7,11 +7,12 @@
 [ext_resource type="Script" uid="uid://blrbls0eouht7" path="res://p4/termometro.gd" id="5_bqmyc"]
 [ext_resource type="Texture2D" uid="uid://bfm0ily5ad6t8" path="res://p5/Termometro.png" id="5_gaf85"]
 [ext_resource type="Texture2D" uid="uid://ci0h4fmc4reah" path="res://p5/gelo.png" id="6_5et2k"]
+[ext_resource type="Texture2D" uid="uid://bihm5nsblhbi6" path="res://p5/fogos.png" id="7_arxru"]
 [ext_resource type="Texture2D" uid="uid://cn5ejtcbvf2sh" path="res://p5/fogo.png" id="7_bqmyc"]
 [ext_resource type="Texture2D" uid="uid://gpyc23xnb7sl" path="res://p5/Radio.png" id="8_coxbx"]
 [ext_resource type="Texture2D" uid="uid://4kxb4di5niip" path="res://p5/botaoRadio.png" id="9_6tpcv"]
 [ext_resource type="Script" uid="uid://dilp2ei6wxijg" path="res://p4/potenciometro.gd" id="11_bqmyc"]
-[ext_resource type="Texture2D" uid="uid://dsjutfgy121rk" path="res://p5/balao.png" id="12_coxbx"]
+[ext_resource type="Texture2D" uid="uid://dc5tekf8e2dnq" path="res://p5/notasmusicais.png" id="13_arxru"]
 [ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="13_v4unl"]
 [ext_resource type="AudioStream" uid="uid://bkuksytn2kqb2" path="res://vozes/pagina4.ogg" id="14_v4unl"]
 
@@ -21,12 +22,154 @@ radius = 51.41984
 [sub_resource type="CircleShape2D" id="CircleShape2D_npyi1"]
 radius = 51.0392
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_npyi1"]
+atlas = ExtResource("7_arxru")
+region = Rect2(0, 0, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsoc8"]
+atlas = ExtResource("7_arxru")
+region = Rect2(166, 0, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em67h"]
+atlas = ExtResource("7_arxru")
+region = Rect2(332, 0, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qasmv"]
+atlas = ExtResource("7_arxru")
+region = Rect2(0, 166, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pr8j"]
+atlas = ExtResource("7_arxru")
+region = Rect2(166, 166, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igkjx"]
+atlas = ExtResource("7_arxru")
+region = Rect2(332, 166, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_754mu"]
+atlas = ExtResource("7_arxru")
+region = Rect2(0, 332, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq1wr"]
+atlas = ExtResource("7_arxru")
+region = Rect2(166, 332, 166, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhqh5"]
+atlas = ExtResource("7_arxru")
+region = Rect2(332, 332, 166, 166)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qi6j7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npyi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsoc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em67h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qasmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pr8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igkjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_754mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq1wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhqh5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v4unl"]
 radius = 24.48877
 height = 145.66391
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5et2k"]
 radius = 965.73
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi6j7"]
+atlas = ExtResource("13_arxru")
+region = Rect2(0, 0, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37av8"]
+atlas = ExtResource("13_arxru")
+region = Rect2(228, 0, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd58i"]
+atlas = ExtResource("13_arxru")
+region = Rect2(456, 0, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkylt"]
+atlas = ExtResource("13_arxru")
+region = Rect2(0, 129, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5tsl"]
+atlas = ExtResource("13_arxru")
+region = Rect2(228, 129, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1huki"]
+atlas = ExtResource("13_arxru")
+region = Rect2(456, 129, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4a41"]
+atlas = ExtResource("13_arxru")
+region = Rect2(0, 258, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utj73"]
+atlas = ExtResource("13_arxru")
+region = Rect2(228, 258, 218, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iajjr"]
+atlas = ExtResource("13_arxru")
+region = Rect2(456, 258, 218, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aovjr"]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": SubResource("AtlasTexture_qi6j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37av8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd58i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkylt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5tsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1huki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4a41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utj73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iajjr")
+}],
+"loop": true,
+"name": &"notas",
+"speed": 8.0
+}]
 
 [node name="TextureRect" type="TextureRect"]
 anchors_preset = 15
@@ -66,17 +209,24 @@ shape = SubResource("CircleShape2D_npyi1")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_bqmyc")
 
+[node name="fogos" type="AnimatedSprite2D" parent="fogo/fogo"]
+position = Vector2(-1.5000023, -10.999981)
+scale = Vector2(0.70481926, 0.68674695)
+sprite_frames = SubResource("SpriteFrames_qi6j7")
+frame = 8
+frame_progress = 0.81188375
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.41400003
-anchor_top = 0.60400003
-anchor_right = 0.60700005
-anchor_bottom = 0.62600005
-offset_left = 8.047974
-offset_top = -0.4960327
-offset_right = -0.17602539
-offset_bottom = -0.024047852
+anchor_top = 0.588
+anchor_right = 0.583
+anchor_bottom = 0.61
+offset_left = -9.952026
+offset_top = -0.11199951
+offset_right = 0.25598145
+offset_bottom = 0.35998535
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Temperatura: 0º C"
 
@@ -114,14 +264,16 @@ position = Vector2(-7.5756655, -7.5757446)
 scale = Vector2(0.20000002, 0.20000002)
 shape = SubResource("CircleShape2D_5et2k")
 
-[node name="BalaoFala" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 37.999996
-offset_top = 683.0
-offset_right = 714.0
-offset_bottom = 1052.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("12_coxbx")
+[node name="Node2D" type="Node2D" parent="radio/potenciometro"]
+position = Vector2(-3325.7576, -6545.4546)
+scale = Vector2(3.030303, 3.030303)
+
+[node name="BalaoFala" type="AnimatedSprite2D" parent="radio/potenciometro/Node2D"]
+position = Vector2(474.99997, 2045.0001)
+scale = Vector2(1.832569, 1.8096337)
+sprite_frames = SubResource("SpriteFrames_aovjr")
+animation = &"notas"
+frame_progress = 0.701382
 
 [node name="Speaker" type="TouchScreenButton" parent="."]
 position = Vector2(352, 58)

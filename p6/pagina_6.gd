@@ -8,7 +8,7 @@ func _on_voltar_pressed() -> void:
 
 
 func _on_seguir_pressed() -> void:
-	get_tree().change_scene_to_file("res://contracapa/Contracapa.tscn")
+	get_tree().change_scene_to_file("res://p7/p_7.tscn")
 
 func _on_speaker_pressed() -> void:
 	

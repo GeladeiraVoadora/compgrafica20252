@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4eqdap32vgfc"]
+[gd_scene load_steps=7 format=3 uid="uid://b4eqdap32vgfc"]
 
 [ext_resource type="Texture2D" uid="uid://mn8rjle3ncdk" path="res://contracapa/Contra capa.png" id="1_7sq4d"]
 [ext_resource type="Script" uid="uid://cxu7wt0nf2lk6" path="res://contracapa/texture_rect.gd" id="2_5jbhd"]
 [ext_resource type="Texture2D" uid="uid://dyftaoaqimi70" path="res://assets/ArrowCounterClockwise.png" id="3_14re7"]
 [ext_resource type="Texture2D" uid="uid://civl7jvvuo3cm" path="res://assets/SpeakerSimpleX(1).png" id="4_14re7"]
 [ext_resource type="AudioStream" uid="uid://iv7ud0xtu2b" path="res://vozes/referencias.ogg" id="5_14re7"]
+[ext_resource type="Texture2D" uid="uid://o7c8jnbh2w2d" path="res://assets/voltar.png" id="6_w21o2"]
 
 [node name="Contracapa" type="TextureRect"]
 offset_right = 40.0
@@ -24,6 +25,22 @@ texture_normal = ExtResource("4_14re7")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
 stream = ExtResource("5_14re7")
 
+[node name="voltar" type="TouchScreenButton" parent="."]
+position = Vector2(33, 875)
+texture_normal = ExtResource("6_w21o2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 965.0
+offset_right = 101.0
+offset_bottom = 988.0
+theme_override_colors/font_outline_color = Color(0.34901962, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 6
+text = "Voltar"
+
 [connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="Speaker" to="." method="_on_speaker_pressed"]
 [connection signal="finished" from="Speaker/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

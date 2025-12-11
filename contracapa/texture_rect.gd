@@ -24,3 +24,7 @@ func _on_speaker_pressed() -> void:
 
 func _on_audio_stream_player_2d_finished() -> void:
 	$Speaker.texture_normal = tex_stop
+
+
+func _on_voltar_pressed() -> void:
+	get_tree().change_scene_to_file("res://p7/p_7.tscn")

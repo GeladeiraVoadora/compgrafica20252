@@ -4,7 +4,8 @@ var tex_play = preload("res://assets/SpeakerHigh(1).png")
 var tex_stop = preload("res://assets/SpeakerSimpleX.png")
 
 func _ready() -> void:
-	$BalaoFala.visible = false
+	$radio/potenciometro/Node2D/BalaoFala.visible = false
+	$fogo/fogo/fogos.play("default")
 
 func _on_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://p3/pagina3.tscn")

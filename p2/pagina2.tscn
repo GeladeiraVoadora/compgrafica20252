@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bpa0i13r3p7u2"]
+[gd_scene load_steps=34 format=3 uid="uid://bpa0i13r3p7u2"]
 
 [ext_resource type="Texture2D" uid="uid://cdtl8pyodc1a4" path="res://p2/P2.png" id="1_2a0te"]
 [ext_resource type="Script" uid="uid://qpwu3rvnutrd" path="res://p2/pagina_2.gd" id="2_24tub"]
 [ext_resource type="Texture2D" uid="uid://b5epuaimc8cqk" path="res://assets/ArrowCircleLeft.png" id="3_ugi84"]
 [ext_resource type="Texture2D" uid="uid://bqutqkdfte6s2" path="res://assets/ArrowCircleRightOrange.png" id="4_0h83j"]
-[ext_resource type="Texture2D" uid="uid://mi4jnw02aotq" path="res://p2/telefoneLIgado.png" id="5_0h83j"]
+[ext_resource type="Texture2D" uid="uid://ihiolqbkj3c8" path="res://p2/telefoneatendido.png" id="5_8geqa"]
 [ext_resource type="Texture2D" uid="uid://3ge10uss65ew" path="res://p2/semtitulo.png" id="6_1pnqs"]
 [ext_resource type="Texture2D" uid="uid://c2l2hicn3vljm" path="res://p2/cartaamigofechada.png" id="7_ng52a"]
 [ext_resource type="Texture2D" uid="uid://dxokdsvrawgna" path="res://p2/carta.png" id="7_vnmhc"]
@@ -13,6 +13,42 @@
 [ext_resource type="AudioStream" uid="uid://b3c4fwa0g7e4" path="res://vozes/pagina2.ogg" id="11_8geqa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_du2o3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk5ca"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(0, 0, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23osi"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(395, 0, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u64e"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(790, 0, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5guqx"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(0, 395, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6yy2"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(395, 395, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyn5a"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(790, 395, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcyjb"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(0, 790, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qdjt"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(395, 790, 395, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2y23"]
+atlas = ExtResource("5_8geqa")
+region = Rect2(790, 790, 395, 395)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnmhc"]
 atlas = ExtResource("6_1pnqs")
@@ -50,7 +86,37 @@ region = Rect2(790, 790, 395, 395)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_0h83j")
+"texture": SubResource("AtlasTexture_gk5ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23osi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u64e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5guqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6yy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyn5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcyjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qdjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2y23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23osi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk5ca")
 }],
 "loop": true,
 "name": &"atendido",
@@ -202,7 +268,7 @@ shape = SubResource("CircleShape2D_du2o3")
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_gk5ca")
 animation = &"atendido"
-frame_progress = 0.27028045
+frame_progress = 0.76044124
 
 [node name="Carta" type="TouchScreenButton" parent="."]
 position = Vector2(104, 556)
