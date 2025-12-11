@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqutqkdfte6s2" path="res://assets/ArrowCircleRightOrange.png" id="3_8pypl"]
 [ext_resource type="Texture2D" uid="uid://b5epuaimc8cqk" path="res://assets/ArrowCircleLeft.png" id="4_6qcbo"]
 [ext_resource type="Texture2D" uid="uid://dcu7ay35f3q7i" path="res://assets/SpeakerSimpleX.png" id="5_d2mxq"]
-[ext_resource type="AudioStream" uid="uid://dr5ah5gv7l2xr" path="res://vozes/pagina6.ogg" id="6_eaej8"]
+[ext_resource type="AudioStream" uid="uid://galh7a7rpra3" path="res://vozes/pagina7.ogg" id="6_6qcbo"]
 [ext_resource type="Texture2D" uid="uid://c2rg85ympc077" path="res://p7/Animao_de_Fogueira_e_Socializaoonline-video-cutter.com-ezgif.com-gif-to-sprite-converter.png" id="7_x0fwo"]
 [ext_resource type="Script" uid="uid://d7ywsoar5xft" path="res://p7/area_2d.gd" id="8_6qcbo"]
 [ext_resource type="Texture2D" uid="uid://cx0nt41k78w1o" path="res://p7/image-removebg-preview(1).png" id="9_d2mxq"]
@@ -606,7 +606,7 @@ position = Vector2(352, 58)
 texture_normal = ExtResource("5_d2mxq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Speaker"]
-stream = ExtResource("6_eaej8")
+stream = ExtResource("6_6qcbo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(389, 729)
